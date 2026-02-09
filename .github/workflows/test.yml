@@ -20,8 +20,8 @@ jobs:
       - uses: actions/checkout@v6
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: "28.3.1"
-          gleam-version: "1.14.0"
+          otp-version: "28"
+          gleam-version: "1.14"
           rebar3-version: "3"
       - uses: actions/setup-node@v6
         if: matrix.target == 'javascript'
