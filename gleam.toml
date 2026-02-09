@@ -1,6 +1,6 @@
 name = "whisper"
 version = "0.1.0"
-description = "Topic-based pub/sub system with buffered subscriptions and callback listeners. Cross-platform support for Erlang and JavaScript."
+description = "Local process pub/sub for Gleam with buffered subscriptions. Cross-platform support for Erlang and JavaScript."
 licenses = ["MIT"]
 repository = { type = "github", user = "webermarci", repo = "whisper" }
 
