@@ -1,0 +1,11 @@
+name = "whisper"
+version = "0.1.0"
+description = "Topic-based pub/sub system with buffered subscriptions and callback listeners. Cross-platform support for Erlang and JavaScript."
+licenses = ["MIT"]
+repository = { type = "github", user = "webermarci", repo = "whisper" }
+
+[dependencies]
+gleam_stdlib = ">= 0.44.0 and < 2.0.0"
+
+[dev-dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
