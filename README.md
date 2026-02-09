@@ -5,6 +5,8 @@
 
 A lightweight, cross-platform pub/sub library for Gleam with topic-based messaging and buffered subscriptions.
 
+Whisper provides process-local pub/sub with configurable message buffers, supporting both streaming subscriptions and callback-based handlers.
+
 ## Features
 
 - 📢 **Topic-based messaging** - Organize messages by topics
