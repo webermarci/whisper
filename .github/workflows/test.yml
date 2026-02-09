@@ -18,20 +18,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-
       - uses: erlef/setup-beam@v1.20.4
         with:
           otp-version: "28.3.1"
           gleam-version: "1.14.0"
           rebar3-version: "3"
-
       - uses: actions/setup-node@v6
         if: matrix.target == 'javascript'
         with:
           node-version: "25"
-
       - run: gleam deps download
-
       - name: Run tests
         run: gleam test --target ${{ matrix.target }}
 
