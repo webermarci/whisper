@@ -2,6 +2,11 @@
 
 [![Package Version](https://img.shields.io/hexpm/v/whisper)](https://hex.pm/packages/whisper)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/whisper/)
+![Status: Experimental](https://img.shields.io/badge/status-experimental-orange)
+![Stability: Unstable](https://img.shields.io/badge/stability-unstable-red)
+
+
+> ⚠️ **Warning:** This project is experimental and unstable. APIs may change significantly between versions.
 
 A lightweight, cross-platform pub/sub library for Gleam with topic-based messaging and buffered subscriptions.
 
