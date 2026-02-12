@@ -8,7 +8,7 @@ import {
   Empty,
   Closed,
 } from "./whisper.mjs";
-import { new_buffer, push, pop } from "./whisper_buffer.mjs";
+import { new_buffer, push, pop } from "./whisper/buffer.mjs";
 
 const registry = new Map();
 

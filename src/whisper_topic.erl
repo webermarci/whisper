@@ -16,7 +16,7 @@ add_listener(Pid, Listener) ->
 subscribe(Pid) ->
     SubscriberId = make_ref(),
     Capacity = gen_server:call(Pid, get_capacity),
-    Buffer = whisper_buffer:new_buffer(Capacity),
+    Buffer = whisper@buffer:new_buffer(Capacity),
     gen_server:cast(Pid, {add_subscriber, SubscriberId, Buffer}),
 
     ReceiveFn =
@@ -56,7 +56,7 @@ handle_call({receive_message, SubscriberId}, _From, State) ->
         undefined ->
             {reply, {closed, subscription_cancelled}, State};
         Buffer ->
-            case whisper_buffer:pop(Buffer) of
+            case whisper@buffer:pop(Buffer) of
                 {{ok, Message}, NewBuffer} ->
                     NewSubscribers = maps:put(SubscriberId, NewBuffer, Subscribers),
                     {reply, {message, Message}, State#{subscribers => NewSubscribers}};
@@ -91,7 +91,7 @@ handle_cast({publish, Message}, State) ->
     % Push to all subscriber buffers
     Subscribers = maps:get(subscribers, State),
     NewSubscribers =
-        maps:map(fun(_, Buffer) -> whisper_buffer:push(Buffer, Message) end, Subscribers),
+        maps:map(fun(_, Buffer) -> whisper@buffer:push(Buffer, Message) end, Subscribers),
 
     {noreply, State#{subscribers => NewSubscribers}};
 handle_cast(_Msg, State) ->
