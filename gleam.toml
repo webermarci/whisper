@@ -4,8 +4,9 @@ description = "Local process pub/sub for Gleam with buffered subscriptions. Cros
 licenses = ["MIT"]
 repository = { type = "github", user = "webermarci", repo = "whisper" }
 
-[dependencies]
-gleam_stdlib = ">= 0.44.0 and < 2.0.0"
-
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"
+
+[dependencies]
+gleam_deque = ">= 1.0.0 and < 2.0.0"
+gleam_stdlib = ">= 0.69.0 and < 1.0.0"
